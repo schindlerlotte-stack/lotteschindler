@@ -11,13 +11,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:    #faf7f4;
-      --blush:    #e8d5cc;
-      --rose:     #c9a69a;
-      --mauve:    #9b7b78;
-      --charcoal: #2d2626;
-      --mid:      #5c4848;
-      --light:    #f2ece8;
+      --cream:    #f5f4f8;
+      --pale:     #edeaf4;
+      --lavender: #d8d2ea;
+      --violet:   #9b8fb5;
+      --deep:     #6b5f8a;
+      --charcoal: #252230;
+      --mid:      #4a4460;
       --white:    #ffffff;
       --serif:    'Cormorant Garamond', Georgia, serif;
       --sans:     'Inter', system-ui, sans-serif;
@@ -43,9 +43,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 48px;
-      background: rgba(250, 247, 244, 0.92);
+      background: rgba(245, 244, 248, 0.92);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--blush);
+      border-bottom: 1px solid var(--lavender);
     }
 
     .nav-name {
@@ -72,7 +72,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--rose); }
+    .nav-links a:hover { color: var(--deep); }
 
     /* ─── HERO ────────────────────────────────────────────────── */
     .hero {
@@ -91,7 +91,7 @@
       height: 375px;
       border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 12px 48px rgba(155, 123, 120, 0.25);
+      box-shadow: 0 12px 48px rgba(107, 95, 138, 0.2);
     }
 
     .hero-photo img {
@@ -108,7 +108,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--rose);
+      color: var(--violet);
       margin-bottom: 16px;
     }
 
@@ -123,7 +123,7 @@
 
     .hero-name em {
       font-style: italic;
-      color: var(--mauve);
+      color: var(--deep);
     }
 
     .hero-bio {
@@ -144,7 +144,7 @@
       align-items: center;
       gap: 6px;
       padding: 7px 16px;
-      border: 1px solid var(--blush);
+      border: 1px solid var(--lavender);
       border-radius: 100px;
       font-size: 0.78rem;
       color: var(--mid);
@@ -154,8 +154,8 @@
     }
 
     .pill:hover {
-      background: var(--blush);
-      border-color: var(--rose);
+      background: var(--pale);
+      border-color: var(--violet);
       color: var(--charcoal);
     }
 
@@ -172,7 +172,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--rose);
+      color: var(--violet);
       margin-bottom: 12px;
     }
 
@@ -183,246 +183,16 @@
       color: var(--charcoal);
       margin-bottom: 48px;
       padding-bottom: 20px;
-      border-bottom: 1px solid var(--blush);
+      border-bottom: 1px solid var(--lavender);
     }
 
-    /* ─── DIVIDER ─────────────────────────────────────────────── */
     .full-divider {
       height: 1px;
-      background: var(--blush);
+      background: var(--lavender);
       margin: 0 48px;
     }
 
-    /* ─── EDUCATION ───────────────────────────────────────────── */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .edu-card {
-      background: var(--white);
-      border: 1px solid var(--blush);
-      border-radius: 8px;
-      padding: 28px;
-      transition: box-shadow 0.2s;
-    }
-
-    .edu-card:hover { box-shadow: 0 6px 24px rgba(155, 123, 120, 0.15); }
-
-    .edu-flag {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    .edu-school {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      margin-bottom: 4px;
-    }
-
-    .edu-degree {
-      font-size: 0.85rem;
-      color: var(--mauve);
-      font-style: italic;
-      margin-bottom: 4px;
-    }
-
-    .edu-date {
-      font-size: 0.75rem;
-      color: var(--rose);
-      letter-spacing: 0.08em;
-    }
-
-    /* ─── EXPERIENCE ──────────────────────────────────────────── */
-    .exp-list { display: flex; flex-direction: column; gap: 40px; }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 32px;
-    }
-
-    .exp-meta { text-align: right; padding-top: 4px; }
-
-    .exp-org {
-      font-size: 0.75rem;
-      color: var(--rose);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .exp-location {
-      font-size: 0.75rem;
-      color: var(--mauve);
-      font-style: italic;
-    }
-
-    .exp-date {
-      font-size: 0.72rem;
-      color: var(--mauve);
-      margin-top: 6px;
-    }
-
-    .exp-body {}
-
-    .exp-role {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      margin-bottom: 4px;
-    }
-
-    .exp-employer {
-      font-size: 0.85rem;
-      color: var(--mid);
-      margin-bottom: 12px;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .exp-bullets li {
-      position: relative;
-      padding-left: 16px;
-      font-size: 0.88rem;
-      color: var(--mid);
-    }
-
-    .exp-bullets li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--rose);
-    }
-
-    /* ─── LEADERSHIP ──────────────────────────────────────────── */
-    .lead-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .lead-card {
-      background: var(--light);
-      border-radius: 8px;
-      padding: 22px 24px;
-      border-left: 3px solid var(--rose);
-    }
-
-    .lead-role {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      margin-bottom: 2px;
-    }
-
-    .lead-org {
-      font-size: 0.8rem;
-      color: var(--mauve);
-      margin-bottom: 6px;
-    }
-
-    .lead-date {
-      font-size: 0.72rem;
-      color: var(--rose);
-      letter-spacing: 0.06em;
-    }
-
-    .lead-desc {
-      font-size: 0.83rem;
-      color: var(--mid);
-      margin-top: 8px;
-    }
-
-    /* ─── SKILLS ──────────────────────────────────────────────── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-    }
-
-    .skill-group-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 14px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      background: var(--white);
-      border: 1px solid var(--blush);
-      border-radius: 100px;
-      padding: 5px 14px;
-      font-size: 0.8rem;
-      color: var(--mid);
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────────────── */
-    footer {
-      background: var(--charcoal);
-      color: var(--blush);
-      text-align: center;
-      padding: 48px;
-    }
-
-    .footer-name {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .footer-tagline {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 28px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .footer-links a {
-      color: var(--blush);
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    .footer-copy {
-      font-size: 0.72rem;
-      color: var(--mauve);
-      letter-spacing: 0.06em;
-    }
-
-    /* ─── HIGHLIGHT BAND ──────────────────────────────────────── */
+    /* ─── BAND ────────────────────────────────────────────────── */
     .band {
       background: var(--charcoal);
       padding: 48px;
@@ -456,7 +226,356 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--rose);
+      color: var(--violet);
+    }
+
+    /* ─── EDUCATION ───────────────────────────────────────────── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .edu-card {
+      background: var(--white);
+      border: 1px solid var(--lavender);
+      border-radius: 8px;
+      padding: 28px;
+      transition: box-shadow 0.2s;
+    }
+
+    .edu-card:hover { box-shadow: 0 6px 24px rgba(107, 95, 138, 0.12); }
+
+    .edu-flag { font-size: 1.5rem; margin-bottom: 12px; }
+
+    .edu-school {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .edu-degree {
+      font-size: 0.85rem;
+      color: var(--deep);
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+
+    .edu-date {
+      font-size: 0.75rem;
+      color: var(--violet);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── EXPERIENCE ──────────────────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 40px; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+    }
+
+    .exp-meta { text-align: right; padding-top: 4px; }
+
+    .exp-org {
+      font-size: 0.75rem;
+      color: var(--violet);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .exp-location {
+      font-size: 0.75rem;
+      color: var(--deep);
+      font-style: italic;
+    }
+
+    .exp-date {
+      font-size: 0.72rem;
+      color: var(--deep);
+      margin-top: 6px;
+    }
+
+    .exp-role {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .exp-employer {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-bottom: 12px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--mid);
+    }
+
+    .exp-bullets li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--violet);
+      font-size: 0.6em;
+      top: 0.38em;
+    }
+
+    /* ─── PROJECTS ────────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--lavender);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .project-card:hover { box-shadow: 0 6px 28px rgba(107, 95, 138, 0.14); }
+
+    .project-header {
+      padding: 28px 28px 0;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--violet);
+      border: 1px solid var(--lavender);
+      border-radius: 100px;
+      padding: 3px 12px;
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .project-location {
+      font-size: 0.78rem;
+      color: var(--deep);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .project-summary {
+      font-size: 0.88rem;
+      color: var(--mid);
+      padding: 0 28px;
+      margin-bottom: 0;
+    }
+
+    details.project-expand {
+      border-top: 1px solid var(--lavender);
+      margin-top: 20px;
+    }
+
+    details.project-expand summary {
+      padding: 14px 28px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--violet);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    details.project-expand summary:hover { background: var(--pale); }
+
+    details.project-expand summary::after {
+      content: '＋';
+      margin-left: auto;
+      font-size: 1rem;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    details.project-expand[open] summary::after { content: '－'; }
+
+    .project-details {
+      padding: 20px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-detail-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 6px;
+    }
+
+    .project-detail-text {
+      font-size: 0.87rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    /* ─── LEADERSHIP ──────────────────────────────────────────── */
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .lead-card {
+      background: var(--pale);
+      border-radius: 8px;
+      padding: 22px 24px;
+      border-left: 3px solid var(--violet);
+    }
+
+    .lead-role {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+
+    .lead-org {
+      font-size: 0.8rem;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+
+    .lead-date {
+      font-size: 0.72rem;
+      color: var(--violet);
+      letter-spacing: 0.06em;
+    }
+
+    .lead-desc {
+      font-size: 0.83rem;
+      color: var(--mid);
+      margin-top: 8px;
+    }
+
+    /* ─── SKILLS ──────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+    }
+
+    .skill-group-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--lavender);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+
+    /* ─── PERSONAL ────────────────────────────────────────────── */
+    .personal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .personal-bio p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--charcoal);
+      color: var(--lavender);
+      text-align: center;
+      padding: 48px;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .footer-links a {
+      color: var(--lavender);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--deep);
+      letter-spacing: 0.06em;
     }
 
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
@@ -479,13 +598,10 @@
       section { padding: 60px 20px; }
       .full-divider { margin: 0 20px; }
 
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
+      .exp-item { grid-template-columns: 1fr; gap: 8px; }
       .exp-meta { text-align: left; }
 
+      .personal-grid { grid-template-columns: 1fr; gap: 32px; }
       .band { padding: 40px 20px; }
       footer { padding: 40px 20px; }
     }
@@ -503,6 +619,7 @@
   <ul class="nav-links">
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#leadership">Leadership</a></li>
     <li><a href="#skills">Skills</a></li>
   </ul>
@@ -531,14 +648,14 @@
         </a>
         <span class="pill">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          New Orleans, LA
+          San Francisco · Vienna · New Orleans
         </span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════ HIGHLIGHT BAND ════════════════════════ -->
+<!-- ════════════════════════ BAND ════════════════════════ -->
 <div class="band">
   <div class="band-inner">
     <div class="stat">
@@ -568,7 +685,7 @@
     <div class="edu-card">
       <div class="edu-flag">🇺🇸</div>
       <div class="edu-school">Tulane University School of Public Health and Tropical Medicine</div>
-      <div class="edu-degree">B.S. Public Health — Anthropology Minor</div>
+      <div class="edu-degree">B.S. Public Health, Anthropology Minor</div>
       <div class="edu-date">January 2024 – May 2027 · New Orleans, LA</div>
     </div>
     <div class="edu-card">
@@ -601,10 +718,10 @@
         <div class="exp-date">May 2026 – Aug 2026</div>
       </div>
       <div class="exp-body">
-        <div class="exp-role">Research Intern — Weissman Labs</div>
+        <div class="exp-role">Research Intern, Weissman Labs</div>
         <div class="exp-employer">Stanford University Institute for Stem Cell Biology &amp; Regenerative Medicine</div>
         <ul class="exp-bullets">
-          <li>Conduct in-person lab research on early embryonic vascular development and yolk sac blood-island formation, working directly under scientist Irving Weissman on stem cell research &amp; cancer therapies</li>
+          <li>Conduct in-person lab research on early embryonic vascular development and yolk sac blood-island formation, working directly under scientist Irving Weissman on stem cell research and cancer therapies</li>
           <li>Extract and structure experimental variables to support the investigation of genetic maternal influence</li>
           <li>Collaborate in weekly research meetings to refine study design and research documentation</li>
         </ul>
@@ -635,7 +752,7 @@
         <div class="exp-date">June–July 2024 · July 2025</div>
       </div>
       <div class="exp-body">
-        <div class="exp-role">Medical Intern — Obstetrics</div>
+        <div class="exp-role">Medical Intern, Obstetrics</div>
         <div class="exp-employer">Privatklinik Goldenes Kreuz</div>
         <ul class="exp-bullets">
           <li>Assisted in obstetric patient care including post-delivery monitoring and newborn assessment</li>
@@ -652,12 +769,89 @@
         <div class="exp-date">June–July 2022 · June–July 2023</div>
       </div>
       <div class="exp-body">
-        <div class="exp-role">Medical Intern — Neurology</div>
+        <div class="exp-role">Medical Intern, Neurology</div>
         <div class="exp-employer">Salzkammergut Klinikum Vöcklabruck</div>
         <ul class="exp-bullets">
           <li>Administered medication, drew blood, and practiced neurological testing under clinical supervision</li>
         </ul>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ════════════════════════ PROJECTS ════════════════════════ -->
+<section id="projects">
+  <p class="section-label">Featured Work</p>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag">Stem Cell Research · Stanford University</span>
+        <div class="project-title">Primitive vs. Definitive Hematopoiesis: Lineage Tracing in Embryonic Vascular Development</div>
+        <div class="project-location">Weissman Labs · Stanford, California · 2026</div>
+      </div>
+      <p class="project-summary">
+        The earliest blood in mammals arises in the yolk sac blood islands, where mesodermal precursors generate primitive erythroid cells and macrophage-lineage progenitors before the emergence of true long-term hematopoietic stem cells (LT-HSCs). This project investigates how those two programs, primitive and definitive, are molecularly and anatomically distinguished, and what role genetic maternal factors play in shaping early vascular identity.
+      </p>
+      <details class="project-expand">
+        <summary>Research Detail &amp; Methods</summary>
+        <div class="project-details">
+          <div>
+            <p class="project-detail-label">Scientific Context</p>
+            <p class="project-detail-text">The modern consensus places the origin of definitive LT-HSCs at the hemogenic endothelium of the aorta-gonad-mesonephros (AGM) region, not the yolk sac itself. The key event is the endothelial-to-hematopoietic transition (EHT), in which arterial endothelial cells bud into the aortic lumen and form intra-aortic hematopoietic clusters. Runx1 is essential for this transition. Yolk sac erythro-myeloid progenitors (EMPs), by contrast, are now understood as the principal embryonic source of tissue-resident macrophages and microglia, which seed fetal tissues early and self-maintain with minimal adult bone marrow input. A central open question is how much of steady-state adult hematopoiesis is genuinely supplied by classical LT-HSCs versus long-lived downstream multipotent progenitors.</p>
+          </div>
+          <div>
+            <p class="project-detail-label">Our Approach</p>
+            <p class="project-detail-text">We use inducible Cre-lox fate mapping with temporally controlled drivers to label discrete progenitor populations and track their progeny across embryonic and adult timepoints. Driver choice is critical: constitutive endothelial drivers such as Cdh5/VE-cadherin capture broad vascular histories, while inducible systems allow tighter developmental gating. Experimental variables related to genetic maternal influence on early blood island formation are extracted and structured to test whether maternal genotype shapes the primitive hematopoietic niche before EHT-derived HSCs emerge.</p>
+          </div>
+          <div>
+            <p class="project-detail-label">Lab Techniques</p>
+            <div class="tag-list">
+              <span class="tag">Cre-Lox Lineage Tracing</span>
+              <span class="tag">CRISPR</span>
+              <span class="tag">Mouse Work</span>
+              <span class="tag">Cryostat Sectioning</span>
+              <span class="tag">Histological Staining</span>
+              <span class="tag">Tissue Sectioning</span>
+              <span class="tag">Centrifuge</span>
+              <span class="tag">Pipetting</span>
+              <span class="tag">Microscopy &amp; Imaging Documentation</span>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-tag">Global Health Initiative · Belize</span>
+        <div class="project-title">Belize Maternal Health Initiative</div>
+        <div class="project-location">Tulane Global Health Alliance · Arenal, Belize · 2025–Present · Led by Dr. Lorelei Cropley</div>
+      </div>
+      <p class="project-summary">
+        A community-based participatory research initiative addressing the social and environmental determinants of maternal health outcomes in Arenal, Belize, in partnership with a local midwife and under the guidance of Dr. Lorelei Cropley. The project integrates epidemiological fieldwork with culturally grounded care frameworks adapted to the Mayan community context.
+      </p>
+      <details class="project-expand">
+        <summary>Initiative Details</summary>
+        <div class="project-details">
+          <div>
+            <p class="project-detail-label">Public Health Framework</p>
+            <p class="project-detail-text">The initiative applies a social determinants of health lens to understand the structural and environmental risk factors driving adverse maternal and neonatal outcomes in a rural, resource-limited setting. Environmental health factors including water access, sanitation infrastructure, and geographic isolation are assessed as upstream determinants of maternal morbidity. Epidemiological methods inform needs assessment and resource allocation, with attention to incidence patterns of obstetric complications and barriers to skilled birth attendance in the catchment population.</p>
+          </div>
+          <div>
+            <p class="project-detail-label">Ethics &amp; Cultural Approach</p>
+            <p class="project-detail-text">Working within a Mayan community requires active engagement with indigenous research ethics, including principles of community consent, reciprocity, and the co-production of knowledge with local knowledge holders. Traditional Mayan birth practices and the role of the local midwife as a trusted cultural authority are treated as assets rather than barriers. The initiative is designed to strengthen, not supplant, existing community care infrastructure, and all resource provision is negotiated collaboratively to avoid imposing externally defined clinical standards on a community with its own epistemology of health.</p>
+          </div>
+          <div>
+            <p class="project-detail-label">Key Contributions</p>
+            <p class="project-detail-text">Secured external funding for essential obstetric resources · Collaborated with local midwife to co-design culturally appropriate care protocols · Built organizational infrastructure through TUGHA to sustain the program · Conducted environmental health and access-to-care assessments in the field</p>
+          </div>
+        </div>
+      </details>
     </div>
 
   </div>
@@ -675,21 +869,21 @@
       <div class="lead-role">Founder &amp; President</div>
       <div class="lead-org">Tulane Global Health Alliance (TUGHA) · New Orleans, LA</div>
       <div class="lead-date">November 2025 – Present</div>
-      <div class="lead-desc">Launched and scaled a student-led global health organization. Project Lead for the Belize Maternal Health Initiative — collaborated with a local midwife to advance culturally grounded care and secured funding for essential obstetric resources in Arenal, Belize.</div>
+      <div class="lead-desc">Launched and scaled a student-led global health organization driving high-impact, partner-based global health initiatives.</div>
     </div>
 
     <div class="lead-card">
       <div class="lead-role">Elected Delegate</div>
       <div class="lead-org">Tulane Undergraduate Assembly · New Orleans, LA</div>
       <div class="lead-date">March 2026 – Present</div>
-      <div class="lead-desc">Elected as 1 of 7 delegates to represent the School of Public Health in student government, advocating for student needs and shaping campus health policy through legislative initiatives.</div>
+      <div class="lead-desc">Elected as 1 of 7 delegates to represent the School of Public Health, shaping campus health policy through legislative initiatives.</div>
     </div>
 
     <div class="lead-card">
       <div class="lead-role">Spring Scholar Ambassador · Panelist · Tour Guide</div>
       <div class="lead-org">Tulane Green Wave Ambassadors · New Orleans, LA</div>
       <div class="lead-date">January 2024 – Present</div>
-      <div class="lead-desc">Selected as one of a small cohort of students to represent Tulane through campus tours and prospective student panels.</div>
+      <div class="lead-desc">Selected to represent Tulane through campus tours and prospective student panels.</div>
     </div>
 
     <div class="lead-card">
@@ -746,16 +940,22 @@
         <span class="tag">SPSS</span>
         <span class="tag">Qualtrics</span>
         <span class="tag">Excel</span>
-        <span class="tag">Experimental Protocol Adherence</span>
       </div>
     </div>
     <div>
       <p class="skill-group-title">Laboratory</p>
       <div class="tag-list">
+        <span class="tag">Pipetting</span>
+        <span class="tag">Cryostat</span>
+        <span class="tag">Staining</span>
+        <span class="tag">Lineage Tracing</span>
+        <span class="tag">CRISPR</span>
+        <span class="tag">Cre-Lox</span>
+        <span class="tag">Sectioning</span>
+        <span class="tag">Centrifuge</span>
+        <span class="tag">Mouse Work</span>
         <span class="tag">Microscopy</span>
         <span class="tag">Imaging Documentation</span>
-        <span class="tag">Blood Draw</span>
-        <span class="tag">Neurological Testing</span>
       </div>
     </div>
     <div>
@@ -764,6 +964,40 @@
         <span class="tag">Obstetric Patient Care</span>
         <span class="tag">Post-Delivery Monitoring</span>
         <span class="tag">Medical Documentation</span>
+        <span class="tag">Blood Draw</span>
+        <span class="tag">Neurological Testing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ════════════════════════ PERSONAL ════════════════════════ -->
+<section id="personal">
+  <p class="section-label">Beyond the CV</p>
+  <h2 class="section-title">A Little About Me</h2>
+  <div class="personal-grid">
+    <div class="personal-bio">
+      <p>I grew up vacillating between Austrian and American culture, a dual existence that shaped how I see the world and drew me toward medical anthropology and the ways geography quietly governs human health. I am fascinated by the question of why place determines fate, and by how culture, landscape, and history write themselves onto the body.</p>
+      <p>Outside of work and study, I decompress on a tennis court or in the ocean. Skiing in the Alps still feels like home. I journal, meditate, and read whenever I can. My all-time favourite remains <em>The Goldfinch</em> by Donna Tartt.</p>
+    </div>
+    <div class="personal-interests">
+      <p class="skill-group-title">Interests &amp; Hobbies</p>
+      <div class="tag-list">
+        <span class="tag">Tennis</span>
+        <span class="tag">Surfing</span>
+        <span class="tag">Skiing</span>
+        <span class="tag">Reading</span>
+        <span class="tag">Meditation</span>
+        <span class="tag">Mindfulness</span>
+        <span class="tag">Journaling</span>
+        <span class="tag">Medical Anthropology</span>
+        <span class="tag">Health Geography</span>
+      </div>
+      <p class="skill-group-title" style="margin-top:24px;">Favourite Book</p>
+      <div class="tag-list">
+        <span class="tag"><em>The Goldfinch</em> &nbsp;Donna Tartt</span>
       </div>
     </div>
   </div>
