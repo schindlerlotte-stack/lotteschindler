@@ -245,9 +245,29 @@
       border-radius: 8px;
       padding: 28px;
       transition: box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
     }
 
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.07;
+      transition: opacity 0.3s;
+      z-index: 0;
+    }
+
+    .edu-card:hover::before { opacity: 0.13; }
     .edu-card:hover { box-shadow: 0 6px 24px rgba(107, 95, 138, 0.12); }
+
+    .edu-card > * { position: relative; z-index: 1; }
+
+    .edu-card.bg-tulane::before  { background-image: url('tulane.png'); }
+    .edu-card.bg-sydney::before  { background-image: url('sydney.jpeg'); }
+    .edu-card.bg-rome::before    { background-image: url('rome.jpeg'); }
 
     .edu-flag { margin-bottom: 12px; }
     .edu-flag img { width: 32px; height: auto; border-radius: 2px; box-shadow: 0 1px 4px rgba(0,0,0,0.15); display: block; }
@@ -756,25 +776,25 @@
   <p class="section-label">Academic Background</p>
   <h2 class="section-title">Education</h2>
   <div class="edu-grid">
-    <div class="edu-card">
+    <div class="edu-card bg-tulane">
       <div class="edu-flag"><img src="https://flagcdn.com/w40/us.png" alt="USA" /></div>
       <div class="edu-school">Tulane University School of Public Health and Tropical Medicine</div>
       <div class="edu-degree">B.S. Public Health, Anthropology Minor</div>
       <div class="edu-date">January 2024 – May 2027 · New Orleans, LA</div>
     </div>
-    <div class="edu-card">
+    <div class="edu-card bg-tulane">
       <div class="edu-flag"><img src="https://flagcdn.com/w40/us.png" alt="USA" /></div>
       <div class="edu-school">Tulane University School of Public Health and Tropical Medicine</div>
-      <div class="edu-degree">M.S. Epidemiology (4+1 Accelerated Program)</div>
+      <div class="edu-degree">M.P.H. Epidemiology (4+1 Accelerated Program)</div>
       <div class="edu-date">Expected May 2028 · New Orleans, LA</div>
     </div>
-    <div class="edu-card">
+    <div class="edu-card bg-sydney">
       <div class="edu-flag"><img src="https://flagcdn.com/w40/au.png" alt="Australia" /></div>
       <div class="edu-school">University of Sydney</div>
       <div class="edu-degree">Study Abroad</div>
       <div class="edu-date">July 2025 – December 2025 · Sydney, Australia</div>
     </div>
-    <div class="edu-card">
+    <div class="edu-card bg-rome">
       <div class="edu-flag"><img src="https://flagcdn.com/w40/it.png" alt="Italy" /></div>
       <div class="edu-school">John Cabot University</div>
       <div class="edu-degree">Study Abroad</div>
@@ -1151,7 +1171,7 @@
   <div class="personal-grid">
     <div class="personal-bio">
       <p>I grew up vacillating between Austrian and American culture, a dual existence that shaped how I see the world and drew me toward medical anthropology and the ways geography quietly governs human health. I am fascinated by the question of why place determines fate, and by how culture, landscape, and history write themselves onto the body.</p>
-      <p>Outside of work and study, I decompress on a tennis court or in the ocean. Skiing in the Alps still feels like home. I journal, meditate, and read whenever I can. My all-time favourite remains <em>The Goldfinch</em> by Donna Tartt.</p>
+      <p>I decompress on a tennis court or in the ocean. Skiing in the Alps still feels like home. I journal, meditate, and read whenever I can. My all-time favourite remains <em>The Goldfinch</em> by Donna Tartt.</p>
     </div>
     <div class="personal-interests">
       <p class="skill-group-title">Interests &amp; Hobbies</p>
