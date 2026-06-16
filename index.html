@@ -346,6 +346,75 @@
       gap: 24px;
     }
 
+    .project-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .subprojects {
+      border-top: 1px solid var(--lavender);
+      margin-top: 20px;
+    }
+
+    .subproject-expand {
+      border-bottom: 1px solid var(--lavender);
+    }
+
+    .subproject-expand summary {
+      padding: 16px 28px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .subproject-expand summary:hover { background: var(--pale); }
+
+    .subproject-expand summary::after {
+      content: '＋';
+      margin-left: auto;
+      font-size: 1rem;
+      color: var(--violet);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .subproject-expand[open] summary::after { content: '－'; }
+
+    .subproject-num {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--violet);
+      font-style: italic;
+      flex-shrink: 0;
+    }
+
+    .subproject-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    .subproject-body {
+      padding: 4px 28px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .subproject-body .project-detail-label { margin-bottom: 6px; }
+
+    .subproject-q {
+      font-size: 0.83rem;
+      color: var(--deep);
+      font-style: italic;
+      padding-left: 14px;
+      border-left: 2px solid var(--lavender);
+      line-height: 1.6;
+    }
+
     .project-card {
       background: var(--white);
       border: 1px solid var(--lavender);
@@ -790,42 +859,114 @@
   <h2 class="section-title">Projects</h2>
   <div class="projects-grid">
 
-    <div class="project-card">
+    <div class="project-card full-width">
       <div class="project-header">
-        <span class="project-tag">Stem Cell Research · Stanford University</span>
-        <div class="project-title">Primitive vs. Definitive Hematopoiesis: Lineage Tracing in Embryonic Vascular Development</div>
-        <div class="project-location">Weissman Labs · Stanford, California · 2026</div>
+        <span class="project-tag">Stem Cell Research · Stanford University · Weissman Labs</span>
+        <div class="project-title">Yolk Sac Hematopoiesis, Microglial Lineage, and Embryonic Fate Mapping</div>
+        <div class="project-location">Under Dr. Irving Weissman · Stanford, California · 2026</div>
       </div>
       <p class="project-summary">
-        The earliest blood in mammals arises in the yolk sac blood islands, where mesodermal precursors generate primitive erythroid cells and macrophage-lineage progenitors before the emergence of true long-term hematopoietic stem cells (LT-HSCs). This project investigates how those two programs, primitive and definitive, are molecularly and anatomically distinguished, and what role genetic maternal factors play in shaping early vascular identity.
+        Working under award-winning scientist Dr. Irving Weissman, this research investigates the developmental origins of blood and brain-resident immune cells using inducible Cre-lox lineage tracing in mouse embryos. The central biological question is how the earliest blood programs in the yolk sac — primitive erythropoiesis and erythro-myeloid progenitor (EMP) waves — are spatiotemporally separated from the definitive hematopoietic stem cell (HSC) program that arises later from hemogenic endothelium in the aorta-gonad-mesonephros (AGM). The modern consensus places the first bona fide long-term HSCs at the AGM, where arterial endothelial cells undergo endothelial-to-hematopoietic transition (EHT) — a Runx1-dependent budding event that generates intra-aortic hematopoietic clusters (IAHCs). Yolk sac EMPs, by contrast, are the principal embryonic source of tissue-resident macrophages and microglia, which seed fetal tissues early and self-maintain with minimal adult bone marrow input. A central open question is whether there are distinct microglial subpopulations with different embryonic origins, renewal capacities, or transcriptional identities. These three projects address that question at complementary developmental windows using ultrasound-guided injection, immunohistochemistry, and single-cell transcriptomics.
       </p>
-      <details class="project-expand">
-        <summary>Research Detail &amp; Methods</summary>
-        <div class="project-details">
-          <div>
-            <p class="project-detail-label">Scientific Context</p>
-            <p class="project-detail-text">The modern consensus places the origin of definitive LT-HSCs at the hemogenic endothelium of the aorta-gonad-mesonephros (AGM) region, not the yolk sac itself. The key event is the endothelial-to-hematopoietic transition (EHT), in which arterial endothelial cells bud into the aortic lumen and form intra-aortic hematopoietic clusters. Runx1 is essential for this transition. Yolk sac erythro-myeloid progenitors (EMPs), by contrast, are now understood as the principal embryonic source of tissue-resident macrophages and microglia, which seed fetal tissues early and self-maintain with minimal adult bone marrow input. A central open question is how much of steady-state adult hematopoiesis is genuinely supplied by classical LT-HSCs versus long-lived downstream multipotent progenitors.</p>
-          </div>
-          <div>
-            <p class="project-detail-label">Our Approach</p>
-            <p class="project-detail-text">Working under award-winning scientist Dr. Irving Weissman, we use inducible Cre-lox fate mapping with temporally controlled drivers to label discrete progenitor populations and track their progeny across embryonic and adult timepoints. Driver choice is critical: constitutive endothelial drivers such as Cdh5/VE-cadherin capture broad vascular histories, while inducible systems allow tighter developmental gating. Experimental variables related to genetic maternal influence on early blood island formation are extracted and structured to test whether maternal genotype shapes the primitive hematopoietic niche before EHT-derived HSCs emerge.</p>
-          </div>
-          <div>
-            <p class="project-detail-label">Lab Techniques</p>
-            <div class="tag-list">
-              <span class="tag">Cre-Lox Lineage Tracing</span>
-              <span class="tag">CRISPR</span>
-              <span class="tag">Mouse Work</span>
-              <span class="tag">Cryostat Sectioning</span>
-              <span class="tag">Histological Staining</span>
-              <span class="tag">Tissue Sectioning</span>
-              <span class="tag">Centrifuge</span>
-              <span class="tag">Pipetting</span>
-              <span class="tag">Microscopy &amp; Imaging Documentation</span>
+
+      <div class="subprojects">
+
+        <details class="subproject-expand">
+          <summary>
+            <span class="subproject-num">Project 01</span>
+            <span class="subproject-title">Ultrasound-Guided Microinjection into the Yolk Sac at E8.25–8.5</span>
+          </summary>
+          <div class="subproject-body">
+            <div>
+              <p class="project-detail-label">Experimental Design</p>
+              <p class="project-detail-text">Ultrasound-guided microinjections deliver a micro-dose of 4-hydroxytamoxifen (4-OHT) directly into the space between the amnion and the mesodermal surface of the visceral yolk sac in <em>Hoxb5-CreERT2; R26-zsGreen</em> embryos at E8.25–8.5. This timing targets the primitive and early EMP hematopoietic waves before the emergence of AGM-derived definitive HSCs. The approach could also be adapted to deliver viruses, chemical inhibitors or activators, or exogenous cells depending on experimental needs. Embryos are harvested at E9.5 and E10.5–E11.5, with tissue collected from the dorsal aorta (to examine IAHCs) and the developing brain (to examine early microglial seeding).</p>
+            </div>
+            <div>
+              <p class="project-detail-label">Open Questions</p>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <p class="subproject-q">Can we confine 4-OHT delivery to the yolk sac compartment through this injection strategy, thereby restricting CreERT2 activation to yolk sac progenitors and avoiding recombination in intra-embryonic hemogenic endothelium?</p>
+                <p class="subproject-q">Can direct intra-yolk sac injection of 4-OHT induce recombination in all Hoxb5+ cells within that compartment, and is recombination efficiency sufficient to detect labeled progeny at later harvest points?</p>
+              </div>
+            </div>
+            <div>
+              <p class="project-detail-label">Techniques</p>
+              <div class="tag-list">
+                <span class="tag">Ultrasound-Guided Microinjection</span>
+                <span class="tag">4-OHT Induction</span>
+                <span class="tag">Hoxb5-CreERT2 Mouse Model</span>
+                <span class="tag">Mouse Surgery &amp; Embryo Handling</span>
+                <span class="tag">Cre-Lox Lineage Tracing</span>
+                <span class="tag">Pipetting</span>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
+
+        <details class="subproject-expand">
+          <summary>
+            <span class="subproject-num">Project 02</span>
+            <span class="subproject-title">Immunostaining of E14.5 Hoxb5 Lineage-Traced Brains</span>
+          </summary>
+          <div class="subproject-body">
+            <div>
+              <p class="project-detail-label">Experimental Design</p>
+              <p class="project-detail-text">Using existing E14.5 lineage-traced brain samples (in collaboration with Tiffany), tissue is embedded, cryosectioned, and stained against a panel of markers: Iba1 and CD45 to identify microglia and myeloid identity, and Ki67/Mcm2 to assess proliferative activity. An additional arm of the project involves staining against neurotransmitter markers to test whether zsGreen+ (yolk sac-derived) microglia are preferentially positioned near specific neuronal cell types, probing potential functional heterogeneity in early microglial colonization.</p>
+            </div>
+            <div>
+              <p class="project-detail-label">Open Questions</p>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <p class="subproject-q">How soon after yolk sac specification do EMP-derived microglia enter the neural tube and brain parenchyma, and is their entry kinetics distinct from later monocyte-derived populations?</p>
+                <p class="subproject-q">What proportion of zsGreen+ (yolk sac-lineage) microglia are actively dividing at E14.5, and does this differ from zsGreen− microglia?</p>
+                <p class="subproject-q">Are yolk sac-derived microglia preferentially localized to distinct brain regions or near specific neuronal populations, suggesting early functional patterning?</p>
+              </div>
+            </div>
+            <div>
+              <p class="project-detail-label">Techniques</p>
+              <div class="tag-list">
+                <span class="tag">Cryostat Sectioning</span>
+                <span class="tag">Histological Staining</span>
+                <span class="tag">Immunofluorescence (Iba1, CD45, Ki67, Mcm2)</span>
+                <span class="tag">Tissue Embedding</span>
+                <span class="tag">Microscopy &amp; Imaging Documentation</span>
+                <span class="tag">zsGreen Reporter Imaging</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="subproject-expand">
+          <summary>
+            <span class="subproject-num">Project 03</span>
+            <span class="subproject-title">De Novo Lineage Tracing, FACS Sorting, and scRNA-seq of zsGreen+ Microglia</span>
+          </summary>
+          <div class="subproject-body">
+            <div>
+              <p class="project-detail-label">Experimental Design</p>
+              <p class="project-detail-text">This arm sets up a full lineage-tracing pipeline from breeding through single-cell transcriptomics. <em>Hoxb5-CreERT2; R26-zsGreen</em> crosses are mated, plug dates recorded, and 4-OHT administered at defined developmental timepoints to induce recombination. After harvest, zsGreen+ microglia are isolated by fluorescence-activated cell sorting (FACS) and submitted for single-cell RNA sequencing (scRNA-seq) processing. Unbiased clustering and gene expression profiling will characterize transcriptional heterogeneity within the yolk sac-derived microglial population and identify candidate subsets that resemble less-differentiated hematopoietic progenitors or quiescent microglial precursors. Results are expected post-summer.</p>
+            </div>
+            <div>
+              <p class="project-detail-label">Open Questions</p>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <p class="subproject-q">Are there transcriptionally distinct subsets within the zsGreen+ microglial population, and do any retain a gene expression signature consistent with a less-differentiated or progenitor-like hematopoietic state?</p>
+                <p class="subproject-q">Does unbiased scRNA-seq clustering reveal microglial heterogeneity that correlates with anatomical location, proliferative state, or proximity to specific neuronal cell types observed in Project 02?</p>
+              </div>
+            </div>
+            <div>
+              <p class="project-detail-label">Techniques</p>
+              <div class="tag-list">
+                <span class="tag">Mouse Breeding &amp; Plug Dating</span>
+                <span class="tag">4-OHT Induction</span>
+                <span class="tag">FACS Sorting</span>
+                <span class="tag">scRNA-seq</span>
+                <span class="tag">Centrifuge</span>
+                <span class="tag">Cre-Lox Lineage Tracing</span>
+                <span class="tag">Bioinformatic Clustering</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
     </div>
 
     <div class="project-card">
@@ -994,6 +1135,7 @@
         <span class="tag">Meditation</span>
         <span class="tag">Mindfulness</span>
         <span class="tag">Journaling</span>
+        <span class="tag">Fly Fishing</span>
         <span class="tag">Medical Anthropology</span>
         <span class="tag">Health Geography</span>
       </div>
