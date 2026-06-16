@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lotte Schindler — Global Public Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #faf7f4;
+      --blush:    #e8d5cc;
+      --rose:     #c9a69a;
+      --mauve:    #9b7b78;
+      --charcoal: #2d2626;
+      --mid:      #5c4848;
+      --light:    #f2ece8;
+      --white:    #ffffff;
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--charcoal);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(250, 247, 244, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--blush);
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--rose); }
+
+    /* ─── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 48px 80px;
+      gap: 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 300px;
+      height: 375px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(155, 123, 120, 0.25);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 16px;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--mauve);
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border: 1px solid var(--blush);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      color: var(--mid);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      background: var(--white);
+    }
+
+    .pill:hover {
+      background: var(--blush);
+      border-color: var(--rose);
+      color: var(--charcoal);
+    }
+
+    .pill svg { width: 13px; height: 13px; opacity: 0.6; }
+
+    /* ─── SECTION WRAPPER ─────────────────────────────────────── */
+    section {
+      padding: 80px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 48px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--blush);
+    }
+
+    /* ─── DIVIDER ─────────────────────────────────────────────── */
+    .full-divider {
+      height: 1px;
+      background: var(--blush);
+      margin: 0 48px;
+    }
+
+    /* ─── EDUCATION ───────────────────────────────────────────── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .edu-card {
+      background: var(--white);
+      border: 1px solid var(--blush);
+      border-radius: 8px;
+      padding: 28px;
+      transition: box-shadow 0.2s;
+    }
+
+    .edu-card:hover { box-shadow: 0 6px 24px rgba(155, 123, 120, 0.15); }
+
+    .edu-flag {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .edu-school {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .edu-degree {
+      font-size: 0.85rem;
+      color: var(--mauve);
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+
+    .edu-date {
+      font-size: 0.75rem;
+      color: var(--rose);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── EXPERIENCE ──────────────────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 40px; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+    }
+
+    .exp-meta { text-align: right; padding-top: 4px; }
+
+    .exp-org {
+      font-size: 0.75rem;
+      color: var(--rose);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .exp-location {
+      font-size: 0.75rem;
+      color: var(--mauve);
+      font-style: italic;
+    }
+
+    .exp-date {
+      font-size: 0.72rem;
+      color: var(--mauve);
+      margin-top: 6px;
+    }
+
+    .exp-body {}
+
+    .exp-role {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .exp-employer {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-bottom: 12px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.88rem;
+      color: var(--mid);
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--rose);
+    }
+
+    /* ─── LEADERSHIP ──────────────────────────────────────────── */
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .lead-card {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 22px 24px;
+      border-left: 3px solid var(--rose);
+    }
+
+    .lead-role {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+
+    .lead-org {
+      font-size: 0.8rem;
+      color: var(--mauve);
+      margin-bottom: 6px;
+    }
+
+    .lead-date {
+      font-size: 0.72rem;
+      color: var(--rose);
+      letter-spacing: 0.06em;
+    }
+
+    .lead-desc {
+      font-size: 0.83rem;
+      color: var(--mid);
+      margin-top: 8px;
+    }
+
+    /* ─── SKILLS ──────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+    }
+
+    .skill-group-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--blush);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--charcoal);
+      color: var(--blush);
+      text-align: center;
+      padding: 48px;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .footer-links a {
+      color: var(--blush);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--mauve);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── HIGHLIGHT BAND ──────────────────────────────────────── */
+    .band {
+      background: var(--charcoal);
+      padding: 48px;
+    }
+
+    .band-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .stat {
+      text-align: center;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 0.7rem; }
+
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 20px 60px;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .hero-photo { width: 220px; height: 275px; }
+      .hero-contact { justify-content: center; }
+
+      section { padding: 60px 20px; }
+      .full-divider { margin: 0 20px; }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .exp-meta { text-align: left; }
+
+      .band { padding: 40px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav>
+  <a class="nav-name" href="#top">Lotte Schindler</a>
+  <ul class="nav-links">
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════ HERO ════════════════════════════ -->
+<div id="top" style="max-width:1100px;margin:0 auto;">
+  <div class="hero">
+    <div class="hero-photo">
+      <img src="headshot.jpg" alt="Lotte Schindler" />
+    </div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Public Health · Research · Global Medicine</p>
+      <h1 class="hero-name">Lotte Adelia<br /><em>Schindler</em></h1>
+      <p class="hero-bio">
+        B.S. Public Health candidate at Tulane University School of Public Health and Tropical Medicine, with hands-on clinical and research experience across three continents. Passionate about maternal health, global equity, and the intersection of science and policy.
+      </p>
+      <div class="hero-contact">
+        <a class="pill" href="mailto:schindlerlotte@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          schindlerlotte@gmail.com
+        </a>
+        <a class="pill" href="tel:+14153006440">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.6 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.06 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6 6l.41-.41a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          +1 (415) 300-6440
+        </a>
+        <span class="pill">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          New Orleans, LA
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════ HIGHLIGHT BAND ════════════════════════ -->
+<div class="band">
+  <div class="band-inner">
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Continents of Clinical Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Countries of Study &amp; Work</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2026</div>
+      <div class="stat-label">Stanford Stem Cell Research Intern</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════ EDUCATION ════════════════════════ -->
+<section id="education">
+  <p class="section-label">Academic Background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-flag">🇺🇸</div>
+      <div class="edu-school">Tulane University School of Public Health and Tropical Medicine</div>
+      <div class="edu-degree">B.S. Public Health — Anthropology Minor</div>
+      <div class="edu-date">January 2024 – May 2027 · New Orleans, LA</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-flag">🇦🇺</div>
+      <div class="edu-school">University of Sydney</div>
+      <div class="edu-degree">Study Abroad</div>
+      <div class="edu-date">July 2025 – December 2025 · Sydney, Australia</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-flag">🇮🇹</div>
+      <div class="edu-school">John Cabot University</div>
+      <div class="edu-degree">Study Abroad</div>
+      <div class="edu-date">August 2023 – December 2023 · Rome, Italy</div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ════════════════════════ EXPERIENCE ════════════════════════ -->
+<section id="experience">
+  <p class="section-label">Professional Background</p>
+  <h2 class="section-title">Work Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-org">Research</div>
+        <div class="exp-location">Stanford, CA 🇺🇸</div>
+        <div class="exp-date">May 2026 – Aug 2026</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Research Intern — Weissman Labs</div>
+        <div class="exp-employer">Stanford University Institute for Stem Cell Biology &amp; Regenerative Medicine</div>
+        <ul class="exp-bullets">
+          <li>Conduct in-person lab research on early embryonic vascular development and yolk sac blood-island formation, working directly under scientist Irving Weissman on stem cell research &amp; cancer therapies</li>
+          <li>Extract and structure experimental variables to support the investigation of genetic maternal influence</li>
+          <li>Collaborate in weekly research meetings to refine study design and research documentation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-org">Reproductive Health</div>
+        <div class="exp-location">Remote 🌐</div>
+        <div class="exp-date">Feb 2026 – Present</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Reproductive Health Intern</div>
+        <div class="exp-employer">American Medical Women's Association (AMWA)</div>
+        <ul class="exp-bullets">
+          <li>Facilitate outreach to OB/GYNs nationwide to connect providers with medical mobilization resources</li>
+          <li>Support the dissemination of evidence-based maternal health materials</li>
+          <li>Assist in organizing provider engagement data and tracking communication metrics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-org">Obstetrics</div>
+        <div class="exp-location">Vienna, Austria 🇦🇹</div>
+        <div class="exp-date">June–July 2024 · July 2025</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Medical Intern — Obstetrics</div>
+        <div class="exp-employer">Privatklinik Goldenes Kreuz</div>
+        <ul class="exp-bullets">
+          <li>Assisted in obstetric patient care including post-delivery monitoring and newborn assessment</li>
+          <li>Documented patient progress in hospital database systems</li>
+          <li>Assisted in C-section procedures and facilitated communication with non-German-speaking patients</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-org">Neurology</div>
+        <div class="exp-location">Vöcklabruck, Austria 🇦🇹</div>
+        <div class="exp-date">June–July 2022 · June–July 2023</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Medical Intern — Neurology</div>
+        <div class="exp-employer">Salzkammergut Klinikum Vöcklabruck</div>
+        <ul class="exp-bullets">
+          <li>Administered medication, drew blood, and practiced neurological testing under clinical supervision</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ════════════════════════ LEADERSHIP ════════════════════════ -->
+<section id="leadership">
+  <p class="section-label">Community &amp; Service</p>
+  <h2 class="section-title">Leadership &amp; Involvement</h2>
+  <div class="lead-grid">
+
+    <div class="lead-card">
+      <div class="lead-role">Founder &amp; President</div>
+      <div class="lead-org">Tulane Global Health Alliance (TUGHA) · New Orleans, LA</div>
+      <div class="lead-date">November 2025 – Present</div>
+      <div class="lead-desc">Launched and scaled a student-led global health organization. Project Lead for the Belize Maternal Health Initiative — collaborated with a local midwife to advance culturally grounded care and secured funding for essential obstetric resources in Arenal, Belize.</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">Elected Delegate</div>
+      <div class="lead-org">Tulane Undergraduate Assembly · New Orleans, LA</div>
+      <div class="lead-date">March 2026 – Present</div>
+      <div class="lead-desc">Elected as 1 of 7 delegates to represent the School of Public Health in student government, advocating for student needs and shaping campus health policy through legislative initiatives.</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">Spring Scholar Ambassador · Panelist · Tour Guide</div>
+      <div class="lead-org">Tulane Green Wave Ambassadors · New Orleans, LA</div>
+      <div class="lead-date">January 2024 – Present</div>
+      <div class="lead-desc">Selected as one of a small cohort of students to represent Tulane through campus tours and prospective student panels.</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">Vice President</div>
+      <div class="lead-org">Tulane German Club · New Orleans, LA</div>
+      <div class="lead-date">January 2024 – Present</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">Tutor</div>
+      <div class="lead-org">ANT After School Newcomb Tutoring · New Orleans, LA</div>
+      <div class="lead-date">January 2024 – Present</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">TIDES Mentor</div>
+      <div class="lead-org">Tulane TIDES Program · New Orleans, LA</div>
+      <div class="lead-date">March 2026 – Present</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">Member</div>
+      <div class="lead-org">Kappa Kappa Gamma Sorority · New Orleans, LA</div>
+      <div class="lead-date">January 2024 – Present</div>
+    </div>
+
+    <div class="lead-card">
+      <div class="lead-role">Member</div>
+      <div class="lead-org">Tulane Premedical Society</div>
+      <div class="lead-date">January 2024 – Present</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ════════════════════════ SKILLS ════════════════════════ -->
+<section id="skills">
+  <p class="section-label">Capabilities</p>
+  <h2 class="section-title">Skills &amp; Languages</h2>
+  <div class="skills-grid">
+    <div>
+      <p class="skill-group-title">Languages</p>
+      <div class="tag-list">
+        <span class="tag">English</span>
+        <span class="tag">German</span>
+        <span class="tag">Spanish</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-title">Research &amp; Data</p>
+      <div class="tag-list">
+        <span class="tag">SPSS</span>
+        <span class="tag">Qualtrics</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Experimental Protocol Adherence</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-title">Laboratory</p>
+      <div class="tag-list">
+        <span class="tag">Microscopy</span>
+        <span class="tag">Imaging Documentation</span>
+        <span class="tag">Blood Draw</span>
+        <span class="tag">Neurological Testing</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-title">Clinical</p>
+      <div class="tag-list">
+        <span class="tag">Obstetric Patient Care</span>
+        <span class="tag">Post-Delivery Monitoring</span>
+        <span class="tag">Medical Documentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer>
+  <div class="footer-name">Lotte Adelia Schindler</div>
+  <div class="footer-tagline">Global Public Health · Research · Clinical Medicine</div>
+  <div class="footer-links">
+    <a href="mailto:schindlerlotte@gmail.com">schindlerlotte@gmail.com</a>
+    <a href="tel:+14153006440">+1 (415) 300-6440</a>
+    <span>New Orleans, LA</span>
+  </div>
+  <div class="footer-copy">© 2026 Lotte Schindler</div>
+</footer>
+
+</body>
+</html>
