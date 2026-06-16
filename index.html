@@ -370,12 +370,12 @@
     /* ─── PROJECTS ────────────────────────────────────────────── */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
 
-    .project-card.full-width {
-      grid-column: 1 / -1;
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; }
     }
 
     .subprojects {
@@ -897,7 +897,7 @@
   <h2 class="section-title">Projects</h2>
   <div class="projects-grid">
 
-    <div class="project-card full-width">
+    <div class="project-card">
       <div class="project-header">
         <span class="project-tag">Stem Cell Research · Stanford University · Weissman Labs</span>
         <div class="project-title">Yolk Sac Hematopoiesis, Microglial Lineage, and Embryonic Fate Mapping</div>
